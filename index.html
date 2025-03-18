@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h1>Тест переменных окружения</h1>
+  <p>API Key: <span id="apiKey"></span></p>
+  <p>Сообщение: <span id="message"></span></p>
+
+  <script>
+    // Значения будут подставлены GitHub Actions
+    document.getElementById('apiKey').textContent = '__TEST_API_KEY__';
+    document.getElementById('message').textContent = '__MESSAGE__';
+  </script>
+</body>
+</html>

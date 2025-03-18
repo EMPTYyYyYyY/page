@@ -12,8 +12,8 @@ jobs:
         uses: actions/checkout@v4
       - name: Replace secrets in HTML
         env:
-          __TEST_API_KEY__: ${{ secrets.TEST_API_KEY }}
-          __MESSAGE__: ${{ secrets.MESSAGE }}
+          TEST_API_KEY: ${{ secrets.TEST_API_KEY }}
+          MESSAGE: ${{ secrets.MESSAGE }}
         run: |
           sed -i "s|__TEST_API_KEY__|$TEST_API_KEY|g" index.html
           sed -i "s|__MESSAGE__|$MESSAGE|g" index.html

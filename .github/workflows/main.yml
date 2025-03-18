@@ -10,7 +10,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
       - name: Replace secrets in HTML
         env:
           __TEST_API_KEY__: ${{ secrets.TEST_API_KEY }}
@@ -18,7 +17,8 @@ jobs:
         run: |
           sed -i "s|__TEST_API_KEY__|$TEST_API_KEY|g" index.html
           sed -i "s|__MESSAGE__|$MESSAGE|g" index.html
-
+      - name: Debug file content
+        run: cat index.html
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
